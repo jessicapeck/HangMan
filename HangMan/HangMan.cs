@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HangMan
 {
-    public partial class Form1 : Form
+    public partial class HangMan : Form
     {
 
         List<string> words = new List<string>() { "butterfly", "cat", "octopus" };
@@ -22,7 +22,7 @@ namespace HangMan
         int lives_remaining = 6;
 
 
-        public Form1()
+        public HangMan()
         {
             InitializeComponent();
 
@@ -110,6 +110,8 @@ namespace HangMan
                 update_letter_gaps();
                 update_lives_remaining(guess);
             }
+
+            letter_textbox.Text = "";
 
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace HangMan
 {
-    partial class Form1
+    partial class HangMan
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HangMan
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangMan));
             this.frame = new System.Windows.Forms.PictureBox();
             this.head = new System.Windows.Forms.PictureBox();
             this.body = new System.Windows.Forms.PictureBox();
@@ -232,6 +232,7 @@ namespace HangMan
             // 
             // Form1
             // 
+            this.AcceptButton = this.submit_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -252,8 +253,9 @@ namespace HangMan
             this.Controls.Add(this.body);
             this.Controls.Add(this.head);
             this.Controls.Add(this.frame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "HangMan";
             ((System.ComponentModel.ISupportInitialize)(this.frame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.head)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.body)).EndInit();
