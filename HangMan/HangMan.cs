@@ -14,10 +14,10 @@ namespace HangMan
     public partial class HangMan : Form
     {
 
+        // initialise variables
         List<string> words = new List<string>() { };
         List<string> all_letters = new List<string>() { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
         List<string> all_guessed_letters;
-
         string current_word;
         string letter_gaps;
         int lives_remaining;
@@ -27,12 +27,14 @@ namespace HangMan
         {
             InitializeComponent();
 
+            // run the start sequence to set up game
             start_sequence();
 
         }
 
         private void start_sequence()
         {
+            // read all words from file into words list
             StreamReader sr = new StreamReader("C:\\Users\\jess\\OneDrive\\Documents\\Sixth Form\\Computer Science\\Paper2_Programming\\Hangman C#\\words_filtered.txt");
             string line = sr.ReadLine();
 
@@ -42,12 +44,16 @@ namespace HangMan
                 line = sr.ReadLine();
             }
 
+            // assign starting value of 6 to lives_remaining variable
             lives_remaining = 6;
+
+            // empty the all_guessed_letters list at the start of the game
             all_guessed_letters = new List<string>() { };
 
-
+            // set up the UI
             initial_UI_setup();
 
+            // generate the random word for this game
             generate_random_word();
         }
 
@@ -86,40 +92,51 @@ namespace HangMan
 
         private void generate_random_word()
         {
+            // generate random number to be used as words list index
             int num_words = words.Count;
 
             Random random = new Random();
             int num = random.Next(0, num_words);
 
+            // assign the current word to be guessed
             current_word = words[num];
 
+            // create the letter gaps
             letter_gaps = string.Concat(Enumerable.Repeat("_ ", current_word.Length));
 
+            // show the letter gaps
             letter_gaps_label.Text = "Here is the word : " + letter_gaps;
         }
 
         private void submit_button_Click(object sender, EventArgs e)
         {
+           // take in user's guess input, covert to lower case
             string guess = letter_textbox.Text;
             guess = guess.ToLower();
 
 
+            // length check
             if (guess.Length != 1) {
                 error_label.Text = "Please only enter one character.";
                 error_label.Visible = true;
             }
+            // dictionary check (see if it is a letter)
             else if (!(all_letters.Contains(guess))){
                 error_label.Text = "Please make sure that you are entering a letter.";
                 error_label.Visible = true;
             }
+            // check if user has already guessed that letter
             else if (all_guessed_letters.Contains(guess)) {
                 error_label.Text = "You have already guessed that letter.";
                 error_label.Visible = true;
             }
+            // if the guess is valid...
             else {
                 error_label.Visible = false;
+                // add the guess to their list of guessed letters
                 all_guessed_letters.Add(guess);
 
+                // show user's guess in the guessed letters box
                 if (all_guessed_letters.Count == 1)
                 {
                     guessed_letters_label.Text = guessed_letters_label.Text + guess;
@@ -145,6 +162,7 @@ namespace HangMan
 
             string new_letter_gaps = "";
 
+            // fill in letter gaps with correctly guessed letters
             for (var i = 0; i < current_word.Length; i++)
             {
                 if (all_guessed_letters.Contains(current_word[i].ToString()))
@@ -160,8 +178,10 @@ namespace HangMan
 
             letter_gaps = new_letter_gaps;
 
+            // show updated letter gaps
             letter_gaps_label.Text = "Here is the word : " + letter_gaps;
 
+            // check if the word is complete
             if (word_complete)
             {
                 letter_textbox.Enabled = false;
@@ -177,12 +197,15 @@ namespace HangMan
 
         private void update_lives_remaining(string guess)
         {
+            // if the user's letter guess is not in the word...
+            // ...decrement lives remaining by 1 and update the hangman picture
             if (!(current_word.Contains(guess)))
             {
                 lives_remaining -= 1;
                 update_hangman_pic();
             }
 
+            // if user has no lives remaining, end game
             if (lives_remaining == 0)
             {
                 letter_textbox.Enabled = false;
@@ -196,6 +219,7 @@ namespace HangMan
             }
         }
 
+        // instructions on how to update hangman picture based on lives remaining
         private void update_hangman_pic()
         {
             if (lives_remaining == 5)
@@ -224,11 +248,13 @@ namespace HangMan
             }
         }
 
+        // on letter_textbox click, make its contents empty
         private void letter_textbox_Click(object sender, EventArgs e)
         {
             letter_textbox.Text = "";
         }
 
+        // on play_again_button click, initiate the start sequence again
         private void play_again_button_Click(object sender, EventArgs e)
         {
             start_sequence();
