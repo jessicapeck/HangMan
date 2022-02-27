@@ -45,6 +45,7 @@ namespace HangMan
             this.error_label = new System.Windows.Forms.Label();
             this.guessed_letters_label = new System.Windows.Forms.Label();
             this.game_over = new System.Windows.Forms.Label();
+            this.play_again_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.frame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.head)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.body)).BeginInit();
@@ -230,7 +231,19 @@ namespace HangMan
             this.game_over.TabIndex = 14;
             this.game_over.Text = "Oh no! Game over.";
             // 
-            // Form1
+            // play_again_button
+            // 
+            this.play_again_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play_again_button.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.play_again_button.Location = new System.Drawing.Point(493, 189);
+            this.play_again_button.Name = "play_again_button";
+            this.play_again_button.Size = new System.Drawing.Size(153, 59);
+            this.play_again_button.TabIndex = 15;
+            this.play_again_button.Text = "Play again";
+            this.play_again_button.UseVisualStyleBackColor = true;
+            this.play_again_button.Click += new System.EventHandler(this.play_again_button_Click);
+            // 
+            // HangMan
             // 
             this.AcceptButton = this.submit_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -238,6 +251,7 @@ namespace HangMan
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(731, 630);
+            this.Controls.Add(this.play_again_button);
             this.Controls.Add(this.game_over);
             this.Controls.Add(this.guessed_letters_label);
             this.Controls.Add(this.error_label);
@@ -254,7 +268,7 @@ namespace HangMan
             this.Controls.Add(this.head);
             this.Controls.Add(this.frame);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "HangMan";
             this.Text = "HangMan";
             ((System.ComponentModel.ISupportInitialize)(this.frame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.head)).EndInit();
@@ -285,6 +299,7 @@ namespace HangMan
         private System.Windows.Forms.Label error_label;
         private System.Windows.Forms.Label guessed_letters_label;
         private System.Windows.Forms.Label game_over;
+        private System.Windows.Forms.Button play_again_button;
     }
 }
 

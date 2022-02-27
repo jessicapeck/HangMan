@@ -7,29 +7,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HangMan
 {
     public partial class HangMan : Form
     {
 
-        List<string> words = new List<string>() { "butterfly", "cat", "octopus" };
+        List<string> words = new List<string>() { };
         List<string> all_letters = new List<string>() { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-        List<string> all_guessed_letters = new List<string>() { };
+        List<string> all_guessed_letters;
 
         string current_word;
         string letter_gaps;
-        int lives_remaining = 6;
+        int lives_remaining;
 
 
         public HangMan()
         {
             InitializeComponent();
 
+            start_sequence();
+
+        }
+
+        private void start_sequence()
+        {
+            StreamReader sr = new StreamReader("C:\\Users\\jess\\OneDrive\\Documents\\Sixth Form\\Computer Science\\Paper2_Programming\\Hangman C#\\words_filtered.txt");
+            string line = sr.ReadLine();
+
+            while (line != null)
+            {
+                words.Add(line.TrimEnd(','));
+                line = sr.ReadLine();
+            }
+
+            lives_remaining = 6;
+            all_guessed_letters = new List<string>() { };
+
+
             initial_UI_setup();
 
             generate_random_word();
-
         }
 
         private void initial_UI_setup()
@@ -53,11 +72,15 @@ namespace HangMan
 
             // text setup
             letter_textbox.Text = "";
+            guessed_letters_label.Text = "Guessed letters : ";
 
             // enabled set up
             letter_textbox.Enabled = true;
             submit_button.Enabled = true;
-            
+            play_again_button.Enabled = false;
+
+            // colour setup
+            letter_gaps_label.ForeColor = Color.Black;
 
         }
 
@@ -146,6 +169,7 @@ namespace HangMan
 
                 letter_gaps_label.ForeColor = Color.Green;
                 letter_gaps_label.Text = "Here is the word : " + current_word;
+                play_again_button.Enabled = true;
 
             }
 
@@ -167,6 +191,7 @@ namespace HangMan
 
                 letter_gaps_label.ForeColor = Color.Red;
                 letter_gaps_label.Text = "Here is the word : " + current_word;
+                play_again_button.Enabled = true;
 
             }
         }
@@ -202,6 +227,11 @@ namespace HangMan
         private void letter_textbox_Click(object sender, EventArgs e)
         {
             letter_textbox.Text = "";
+        }
+
+        private void play_again_button_Click(object sender, EventArgs e)
+        {
+            start_sequence();
         }
     }
 }
