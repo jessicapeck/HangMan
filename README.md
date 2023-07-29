@@ -9,6 +9,7 @@ Welcome to the 'Hang Man' game! This project was developed for a school assignme
 
 ## How to play
 
+
 ## Technologies
 - C# version 8.0
 - Microsoft Visual Studio Community 2019 version 16.11.28
