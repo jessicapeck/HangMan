@@ -35,7 +35,7 @@ namespace HangMan
         private void start_sequence()
         {
             // read all words from file into words list
-            StreamReader sr = new StreamReader("C:\\Users\\jess\\OneDrive\\Documents\\Sixth Form\\Computer Science\\Paper2_Programming\\Hangman C#\\words_filtered.txt");
+            StreamReader sr = new StreamReader("..\\..\\assets\\words_filtered.txt");
             string line = sr.ReadLine();
 
             while (line != null)
