@@ -5,6 +5,7 @@
 - [License](#license)
 
 ## Introduction
+Welcome to the 'Hang Man' game! This project was developed for a school assignment in which we were focussing on building a simple UI for a game.
 
 ## How to play
 
