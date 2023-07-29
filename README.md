@@ -25,13 +25,13 @@ Welcome to the 'Hang Man' game! This project was developed for a school assignme
 
 The images below show a full run through of the game:
 
-<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-01.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-02.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-03.png" alt="Hang man already guessed" width=33%>
+<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-01.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-02.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-03.png" alt="Hang man already guessed" width=30%>
 
-<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-04.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-05.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-already-guessed.png" alt="Hang man already guessed" width=33%>
+<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-04.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-05.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-already-guessed.png" alt="Hang man already guessed" width=30%>
 
-<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-06.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-07.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-08.png" alt="Hang man already guessed" width=33%>
+<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-06.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-07.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-08.png" alt="Hang man already guessed" width=30%>
 
-<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-09.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-10.png" alt="Hang man already guessed" width=33%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-11.png" alt="Hang man already guessed" width=33%>
+<img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-09.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-10.png" alt="Hang man already guessed" width=30%> <img src="https://github.com/jessicapeck/HangMan/blob/main/images/hang-man-11.png" alt="Hang man already guessed" width=30%>
 
 
 
